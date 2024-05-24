@@ -1,6 +1,8 @@
-﻿namespace Bookinist.DAL.Entityes
+﻿using Bookinist.DAL.Entityes.Base;
+
+namespace Bookinist.DAL.Entityes
 {
-    public class Buyer
+    public class Buyer : Person
     {
 
     }

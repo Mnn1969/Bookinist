@@ -1,0 +1,3 @@
+﻿Команда для миграции - Add-Migration Initial -v
+
+Update-Database -v

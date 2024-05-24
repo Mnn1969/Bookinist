@@ -5,7 +5,7 @@ namespace Bookinist.DAL.Entityes
 {
     public class Deal : Entity
     {
-        [Column(TypeName = "decimal(18,2")]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
 
         public Book? Book { get; set; }

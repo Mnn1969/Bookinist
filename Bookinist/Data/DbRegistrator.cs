@@ -31,6 +31,7 @@ namespace Bookinist.Data
                             break;
                     }
                 })
+                .AddTransient<DbInitializer>()
             ;
     }
 }

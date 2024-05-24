@@ -2,7 +2,7 @@
 
 namespace Bookinist.ViewModels
 {
-    internal class ViewModelLocator
+    class ViewModelLocator
     {
         public MainWindowViewModel MainWindowModel => App.Services.GetRequiredService<MainWindowViewModel>();
     }

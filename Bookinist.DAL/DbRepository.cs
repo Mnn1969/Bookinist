@@ -18,14 +18,14 @@ namespace Bookinist.DAL
             _Set = db.Set<T>();
         }
 
-        public virtual IQueryable<T?> Items => _Set;
+        public virtual IQueryable<T> Items => _Set;
 
-        public T? Get(int id) => Items.SingleOrDefault(item => item!.Id == id);
+        public T Get(int id) => Items.SingleOrDefault(item => item!.Id == id)!;
         
 
-        public async Task<T?> GetAsync(int id, CancellationToken Cancel = default) => await Items
+        public async Task<T> GetAsync(int id, CancellationToken Cancel = default) => (await Items
             .SingleOrDefaultAsync(item=> item!.Id == id, Cancel)
-            .ConfigureAwait(false);
+            .ConfigureAwait(false))!;
         
 
         public T Add(T item)

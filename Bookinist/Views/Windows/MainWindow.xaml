@@ -21,7 +21,7 @@
             <MenuItem Header="Книги"/>
             <MenuItem Header="Статистика"></MenuItem>
         </Menu>
-        <StatusBar DockPanel.Dock="Bottom">
+        <StatusBar>
             <StatusBarItem DockPanel.Dock="Right">
                 <ResizeGrip/>
             </StatusBarItem>

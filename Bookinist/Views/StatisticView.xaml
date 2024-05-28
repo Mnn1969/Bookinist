@@ -20,10 +20,10 @@
                 </TextBlock.Effect>
             </TextBlock>
             <TextBlock HorizontalAlignment="Center" Margin="0,10">Число книг 
-                <TextBlock Text="{Binding BooksCount}"/> штук
+                <TextBlock Text="10"/> штук
             </TextBlock>
             <TextBlock HorizontalAlignment="Center" Margin="0,10">Число книг 
-                <Run Text="{Binding BooksCount, Mode=OneWay}" Foreground="Red">
+                <Run Text="10" Foreground="Red">
                     <Run.TextDecorations>
                         <TextDecoration/>
                     </Run.TextDecorations>

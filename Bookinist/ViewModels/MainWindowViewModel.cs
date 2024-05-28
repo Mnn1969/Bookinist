@@ -3,12 +3,14 @@ using Bookinist.Interfaces;
 using Bookinist.Services.Interfaces;
 using Bookinist.ViewModels.Base;
 using System.Windows.Input;
+using Bookinist.DAL.Context;
 using Bookinist.Infrastructure.Commands;
 
 namespace Bookinist.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
+        private readonly BookinistDB _db;
         private readonly IUserDialog _UserDialog;
         private readonly IDataService _DataService;
         private readonly IRepository<Book> _Books;
@@ -120,6 +122,7 @@ namespace Bookinist.ViewModels
         #endregion
 
         public MainWindowViewModel(
+            BookinistDB db,
             IUserDialog UserDialog, 
             IDataService DataService, 
             IRepository<Book> Books,
@@ -128,6 +131,7 @@ namespace Bookinist.ViewModels
             IRepository<Deal> Deals,
             ISalesService SalesService)
         {
+            _db = db;
             _UserDialog = UserDialog;
             _DataService = DataService;
             _Books = Books;

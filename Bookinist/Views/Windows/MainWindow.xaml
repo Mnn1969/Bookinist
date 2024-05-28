@@ -17,9 +17,9 @@
             <MenuItem Header="Файл">
                 <MenuItem Header="Выход" Command="{StaticResource CloseWindowCommand}"/>
             </MenuItem>
-            <MenuItem Header="Покупатели"/>
-            <MenuItem Header="Книги"/>
-            <MenuItem Header="Статистика"></MenuItem>
+            <MenuItem Header="Покупатели" Command="{Binding ShowBuyersViewCommand}"/>
+            <MenuItem Header="Книги" Command="{Binding ShowBooksViewCommand}"/>
+            <MenuItem Header="Статистика" Command="{Binding ShowStatisticViewCommand}"/>
         </Menu>
         <StatusBar>
             <StatusBarItem DockPanel.Dock="Right">
@@ -28,7 +28,14 @@
             <StatusBarItem Content="{Binding Status}"/>
         </StatusBar>
         <Grid>
-
+            <!--<Grid.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="../../Templates/ModelMainView.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </Grid.Resources>-->
+            <ContentControl Content="{Binding CurrentModel}"/>
         </Grid>
 
     </DockPanel>

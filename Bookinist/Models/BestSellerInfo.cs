@@ -8,5 +8,7 @@ namespace Bookinist.Models
 
         public int SellCount { get; set; }
 
+        public decimal SumCost { get; set; }
+
     }
 }

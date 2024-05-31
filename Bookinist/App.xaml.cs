@@ -9,6 +9,8 @@ namespace Bookinist
 {
     public partial class App
     {
+        public static bool IsDesignTime { get; private set; } = true;
+
         public static object? FocusedWindow => Current.Windows.Cast<Window>().FirstOrDefault(w => w.IsFocused);
         public static object? ActivedWindow => Current.Windows.Cast<Window>().FirstOrDefault(w => w.IsActive);
 
@@ -27,6 +29,8 @@ namespace Bookinist
 
         protected override async void OnStartup(StartupEventArgs e)
         {
+            IsDesignTime = false;
+
             var host = Host;
             using (var scope = Services.CreateScope())
                 scope.ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync().Wait();

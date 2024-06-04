@@ -72,7 +72,7 @@ namespace Bookinist.ViewModels
 
         private CollectionViewSource? _BooksViewSource;
 
-        public ICollectionView BooksView => _BooksViewSource?.View;
+        public ICollectionView BooksView => _BooksViewSource?.View!;
 
         #region SelectedBook : Book - Выбранная книга
 
@@ -153,9 +153,9 @@ namespace Bookinist.ViewModels
             if (!_UserDialog.ConfirmWarning($"Вы хотите удалить книгу {book_to_remove.Name}?", "Удаление книги"))
                 return;
 
-            _BooksRepository.Remove(book_to_remove.Id);
+            _BooksRepository?.Remove(book_to_remove.Id);
 
-            Books.Remove(book_to_remove);
+            Books?.Remove(book_to_remove);
             if (ReferenceEquals(SelectedBook, book_to_remove))
                 SelectedBook = null!;
         }

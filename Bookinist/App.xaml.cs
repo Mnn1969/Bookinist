@@ -8,11 +8,14 @@ using Bookinist.ViewModels;
 namespace Bookinist
 {
     public partial class App
-    {
+    {       
+
+        public static Window? CurrentWindow => FocusedWindow ?? ActiveWindow;
+
         public static bool IsDesignTime { get; private set; } = true;
 
-        public static object? FocusedWindow => Current.Windows.Cast<Window>().FirstOrDefault(w => w.IsFocused);
-        public static object? ActivedWindow => Current.Windows.Cast<Window>().FirstOrDefault(w => w.IsActive);
+        public static Window? FocusedWindow => Current.Windows.Cast<Window>().FirstOrDefault(w => w.IsFocused);
+        public static Window? ActiveWindow => Current.Windows.Cast<Window>().FirstOrDefault(w => w.IsActive);
 
         private static IHost? __Host;
 

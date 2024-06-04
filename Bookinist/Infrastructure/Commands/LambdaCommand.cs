@@ -24,4 +24,6 @@ namespace Bookinist.Infrastructure.Commands
         protected override void Execute(object? p) => _Execute(p);
 
     }
+
+    
 }

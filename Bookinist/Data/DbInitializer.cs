@@ -82,7 +82,7 @@ namespace Bookinist.Data
                 .Select(i => new Book
                     {
                         Name = $"Книга {i}",
-                        Category = rnd.NextItem(_Categories)
+                        Category = rnd.NextItem(_Categories!)
                     })
                     .ToArray();
 
@@ -150,9 +150,9 @@ namespace Bookinist.Data
             var deals = Enumerable.Range(1, __DealsCount)
                 .Select(i => new Deal
                 {
-                    Book = rnd.NextItem(_Books),
-                    Seller = rnd.NextItem(_Sellers),
-                    Buyer = rnd.NextItem(_Buyers),
+                    Book = rnd.NextItem(_Books!),
+                    Seller = rnd.NextItem(_Sellers!),
+                    Buyer = rnd.NextItem(_Buyers!),
                     Price = (decimal)(rnd.NextDouble() * 4000 + 700),
                 });
 

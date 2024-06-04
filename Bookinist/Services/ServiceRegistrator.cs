@@ -8,6 +8,6 @@ namespace Bookinist.Services
         public static IServiceCollection AddServices(this IServiceCollection services) => services
             .AddTransient<ISalesService, SalesService>()
             .AddTransient<IDataService, DataService>()
-            .AddTransient<IUserDialog, UserDialog>();
+            .AddTransient<IUserDialog, UserDialogService>();
     }
 }

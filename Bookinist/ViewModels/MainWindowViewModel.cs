@@ -10,7 +10,6 @@ namespace Bookinist.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        private readonly BookinistDB _db;
         private readonly IUserDialog _UserDialog;
         private readonly IDataService _DataService;
         private readonly IRepository<Book> _Books;
@@ -76,7 +75,7 @@ namespace Bookinist.ViewModels
         /// <summary>Логика выполнения - Отобразить представление книг</summary>
         private void OnShowBooksViewCommandExecuted()
         {
-            CurrentModel = new BooksViewModel(_Books);
+            CurrentModel = new BooksViewModel(_Books, _UserDialog);
         }
 
         #endregion
@@ -121,8 +120,7 @@ namespace Bookinist.ViewModels
 
         #endregion
 
-        public MainWindowViewModel(
-            BookinistDB db,
+        public MainWindowViewModel(            
             IUserDialog UserDialog, 
             IDataService DataService, 
             IRepository<Book> Books,
@@ -131,7 +129,6 @@ namespace Bookinist.ViewModels
             IRepository<Deal> Deals,
             ISalesService SalesService)
         {
-            _db = db;
             _UserDialog = UserDialog;
             _DataService = DataService;
             _Books = Books;

@@ -13,5 +13,5 @@
             foreach (var item in items)
                 collection.Add(item);
         }
-    }
+    }    
 }
